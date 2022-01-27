@@ -22,6 +22,10 @@ triangulos=[(3,2), (1,5), (6,7)]
 listaCirculos=[3, 6, 1, 9, 5]
 rectangulos=[(3,2), (1,5), (6,7)]
 cuadrados=[4, 5, 7, 2, 8, 1, 6]
+Listatriangulos=[(3, 2), (1, 5), (6, 7)]
+Listarectángulo=[(3,2), (1, 5), (6, 7)]
+Listacírculo=[3, 6, 1, 9, 5]
+Listacuadrado=[4, 5, 7, 2, 8, 1, 6]
 
 print("1.Area de un triangulo")
 print("2.Area de un rectangulo")
@@ -223,5 +227,107 @@ while(opc!=8):
             else:
                 print("No ha elegido un numero correcto")
                 print("ERROR")
+#--------------------------------------V2 trabajo GitHub---------------------------------------------   
+nc=0
+def sumar (x,y):
+        print(f"la suma de {x} y {y} es: {x + y}")
+def restar (x,y):
+        print(f"la resta de {x} y {y} es: {x - y}")
+def multiplicar (x,y):
+        print(f"La multiplicación de {x} y {y} es: {x * y}")  
+def dividir (x,y):
+        if (y==0):
+            print("El denominador no puede ser 0")
+        print(f"La divisiÃón de {x} y {y} es: {x / y}")
+def cociente (x,y):
+        print(f"El cociente exacto de {x} y {y} es: {x // y}")
+def resto (x,y):
+        print(f"El resto de {x} y {y} es: {x % y}")
+def exponente (x,y):
+        print(f"El exponente de {x} y {y} es: {x ** y}")
+def tri ():
+        for triangulo in Listatriangulos:
+            print(f"El área del triángulo {triangulo[0]} * {triangulo[1]} /2 es: {triangulo[0]*triangulo[1]/2}")
+        print("\n")
+def cuadrado ():
+        for cuadrado in Listacuadrado:
+            print(f"El área del cuadrado de lado {cuadrado} es: {cuadrado*cuadrado}")
+def rectangulo ():
+    for rectangulo in Listarectángulo:
+        print(f"El área del rectángulo {rectangulo[0]} * {rectangulo[1]} es: {rectangulo[0]*rectangulo[1]}")
+    print("\n")
+def circulo ():
+        for radio in Listacírculo:
+            print(f"El área del círculo {radio} es: {round(math.pi, 2)*radio**2}")
+        print("\n")
+while (nc!=12):
+    print("Calculadora")
+    print("Introduzca uno de los siguientes números")
+    print("1.Suma de 2 números")
+    print("2.Resta de 2 números")
+    print("3.Multiplicación de dos números")
+    print("4.División de dos números")
+    print("5.Cociente de dos números")
+    print("6.Resto de la división de dos números")
+    print("7.Exponente de dos números")
+    #Añadimos areas a nuestra calculadora cientifica, las distancias de los lados ya definidas
+    print("8.-Área de un triángulo")
+    print("9.-Área de un cuadrado")
+    print("10.-Área de un rectángulo")
+    print("11.-Área de un círculo")
+    nc=int(input("Introduzca uno de los números anteriores: "))
+    while (nc<1 or nc>11):
+        print("Calculadora")
+        print("Introduzca uno de los siguientes números")
+        print("1.Suma de 2 números")
+        print("2.Resta de 2 números")
+        print("3.Multiplicación de dos números")
+        print("4.División de dos números")
+        print("5.Cociente de dos números")
+        print("6.Resto de la división de dos números")
+        print("7.Exponente de dos números")
+        print("8.-Área de un triángulo")
+        print("9.-Área de un cuadrado")
+        print("10.-Área de un rectángulo")
+        print("11.-Área de un círculo")
+        nc=int(input("Introduzca uno de los números anteriores: "))
+    if (nc == 1):
+            x=int(input("Escriba el primer número "))
+            y=int(input("Escriba el segundo número "))
+            sumar (x,y)
+    elif (nc == 2):
+            x=int(input("Escriba el primer número "))
+            y=int(input("Escriba el segundo número "))
+            restar (x,y)
+    elif (nc == 3):
+            x=int(input("Escriba el primer número "))
+            y=int(input("Escriba el segundo número "))
+            multiplicar (x,y)
+    elif (nc == 4):
+            x=int(input("Escriba el primer número "))
+            y=int(input("Escriba el segundo número "))
+            dividir (x,y)
+    elif (nc == 5):
+            x=int(input("Escriba el primer número "))
+            y=int(input("Escriba el segundo número "))
+            cociente (x,y)
+    elif (nc == 6):
+            x=int(input("Escriba el primer número "))
+            y=int(input("Escriba el segundo número "))
+            resto (x,y)
+    elif (nc == 7):
+            x=int(input("Escriba el primer número "))
+            y=int(input("Escriba el segundo número "))
+            exponente (x,y)
+    elif (nc == 8):
+            tri ()
+    elif (nc == 9):
+            cuadrado ()
+    elif (nc == 10):
+            rectangulo ()
+    elif (nc == 11):
+            circulo ()
+    else:
+        print("Ha elegido una opción incorrecta")
 
     
