@@ -122,6 +122,106 @@ while(opc!=8):
         
     else:
         print("ERROR")
-    
+#--------------------------------------V2 trabajo GitHub---------------------------------------------   
+    #¿Como vamos a recorrer la lista "triangulos"? con un for
+    #En cada iteracion tenemos una tupla, ya que cada elemento de la lista es una tupla formada por la base y la altura del triangulo (se trata de una lista de triangulos)
+    triangulos=[(3,2), (1,5), (6,7)]
+    listaCirculos=[3, 6, 1, 9, 5]
+    rectangulos=[(3,2), (1,5), (6,7)]
+    cuadrados=[4, 5, 7, 2, 8, 1, 6]
+    opc=0
+    while(opc!=12):
+        print("Calculadora")
+        print("Introduzca uno de los numeros")
+        print("1.SUMA de numeros")
+        print("2.RESTA de numeros")
+        print("3.MULTIPLICACIÓN de numeros")
+        print("4.DIVISIÓN de numeros")
+        print("5.COCIENTE de la división")
+        print("6.RESTO de la división")
+        print("7.EXPONENCIACIÓN")
+        print("8.Area de un triangulo")
+        print("9.Area de un rectangulo")
+        print("10.Area de un circulo")
+        print("11.Area de un cuadrado")
+        print("12.SALIR")
+        opc=int(input("Eliga un numero de los anteriores "))
+        while(opc<1 or opc>8):
+            # print("Calculadora")
+            # print("Introduzca uno de los numeros")
+            # print("1.SUMA de numeros")
+            # print("2.RESTA de numeros")
+            # print("3.MULTIPLICACIÓN de numeros")
+            # print("4.DIVISIÓN de numeros")
+            # print("5.COCIENTE de la división")
+            # print("6.RESTO de la división")
+            # print("7.EXPONENCIACIÓN")
+            # print("8.SALIR")
+            # opc=int(input("Eliga un numero de los anteriores "))
+        
+            if(opc==1):
+                    numero1=int(input("Introduce el primer numero: "))
+                    numero2=int(input("Introduce el segundo numero: "))
+                    resultado1=numero1+numero2
+                    print(f"\t La suma de estos dos numeros es: {resultado1}")
+                
+            elif(opc==2):
+                    numero1=int(input("Introduce el primer numero: "))
+                    numero2=int(input("Introduce el segundo numero: "))
+                    resultado1=numero1-numero2
+                    print(f"\t La resta de estos dos numeros es: {resultado1}")
+                
+            elif(opc==3):
+                    numero1=int(input("Introduce el primer numero: "))
+                    numero2=int(input("Introduce el segundo numero: "))
+                    resultado1=numero1*numero2
+                    print(f"\t La multiplicación de estos dos numeros es: {resultado1}")
+                    
+            elif(opc==4):
+                    numero1=int(input("Introduce el primer numero: "))
+                    numero2=int(input("Introduce el segundo numero: "))
+                    if(numero2==0):
+                        print("El denominador no puede ser igual a 0")
+                        resultado1=numero1/numero2
+                        print(f"\t La división de estos dos numeros es: {resultado1}")
+                    
+            elif(opc==5):
+                    numero1=int(input("Introduce el primer numero: "))
+                    numero2=int(input("Introduce el segundo numero: "))
+                    resultado1=numero1//numero2
+                    print(f"\t El cociente de estos dos numeros es: {resultado1}")
+                
+            elif(opc==6):
+                    numero1=int(input("Introduce el primer numero: "))
+                    numero2=int(input("Introduce el segundo numero: "))
+                    resultado1=numero1%numero2
+                    print(f"\t El resto de la división de estos dos numeros es: {resultado1}")
+                
+            elif(opc==7):
+                    numero1=int(input("Introduce el primer numero: "))
+                    numero2=int(input("Introduce el segundo numero: "))
+                    resultado1=numero1**numero2
+                    print(f"\t La división de estos dos numeros es: {resultado1}")
+                    
+            elif(opc==8):
+                for triangulo in triangulos: 
+                    print(f"El area de un triangulo de base {triangulo[0]} y altura {triangulo[1]} es {triangulo[0]*triangulo[1]/2}")
+            elif(opc==9):    
+                for rectangulo in rectangulos:
+                    #print(rectangulos)
+                    #print(rectangulo[0]*rectangulo[1])
+                    print(f"El area de un rectangulo de base {rectangulo[0]} y altura {rectangulo[1]} es {rectangulo[0]* rectangulo[1]}")
+            elif(opc==10):   
+                for radio in listaCirculos:
+                    #print(radio)
+                    #print(math.pi)
+                    #pi=round(math.pi, 2)
+                    print(f"El area de un circulo de  radio {radio} es {round(math.pi, 2)*radio**2}")
+            elif(opc==11):    
+                for lado in cuadrados:
+                    print(f"El area de un cuadrado de lado {lado} es {lado**2}")
+            else:
+                print("No ha elegido un numero correcto")
+                print("ERROR")
 
     
