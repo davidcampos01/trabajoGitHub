@@ -329,5 +329,54 @@ while (nc!=12):
             circulo ()
     else:
         print("Ha elegido una opción incorrecta")
+#----------------------------------------DATAFRAMES------------------------------------
+import pandas as pd
 
-    
+#carga de los datos users:
+userHeader = ['user_id', 'gender', 'age', 'ocupation', 'zip']
+users = pd.read_table('d:/usuarios/Users/DavidCamposSerrano/Downloads/ml-1m/ml-1m/users.dat',
+                       engine='python',
+                       sep='::',
+                       header=None,
+                       names=userHeader)
+
+print("Primeros 5 usuarios: \n%s" %users[:5])
+# #guardar en txt como csv con separador ;
+# users.to_csv('d:/usuarios/Users/DavidCamposSerrano/Downloads/ml-1m/ml-1m/MyUsers.csv', sep=';')
+
+#carga de los datos ratings:
+ratingsHeader = ['user_id', 'movie_id', 'rating',' timestamp']
+ratings= pd.read_table('d:/usuarios/Users/DavidCamposSerrano/Downloads/ml-1m/ml-1m/ratings.dat',
+                      engine='python',
+                      sep='::',
+                      header=None,
+                      names=ratingsHeader)
+print("Primeras 5 estadisticas: \n%s" %ratings[:5])
+
+#carga de los datos movies:
+moviesHeader = ['movie_id', 'title', 'genders']
+movies= pd.read_table('d:/usuarios/Users/DavidCamposSerrano/Downloads/ml-1m/ml-1m/movies.dat',
+                       engine='python',
+                       sep='::',
+                       header=None,
+                       names=moviesHeader,
+                       encoding='latin-1')
+print("Primeras 5 pelis: \n%s" %movies[:5])
+#vamos a juntar users con ratings
+merge_users_ratings=pd.merge(users, ratings)
+mergeTotal=pd.merge(merge_users_ratings, movies)
+mergeTotal.to_csv('d:/usuarios/Users/DavidCamposSerrano/Downloads/ml-1m/ml-1m/Mymerge.csv', sep=';')
+print(mergeTotal.loc[10])
+
+#realizamos copia del DF Total
+dfInicial=mergeTotal.copy()
+dfInicial=dfInicial.groupby("title").size().sort_values(ascending=False)
+
+#show avg ratings movie(groupby + avg)
+avgRatings = mergeTotal.copy()
+avgRatings = avgRatings.groupby(['movie_id', 'title']).mean()
+print('Avg ratings: \n%s' % avgRatings['rating'][:10])
+
+dataRating=mergeTotal.copy()
+dataRating=dataRating.groupby(['movie_id', 'title'])['rating'].agg(['mean', 'sum', 'count', 'std'])
+
