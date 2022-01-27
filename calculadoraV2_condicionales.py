@@ -47,6 +47,81 @@ elif(numero==4):
         print(f"El area de un cuadrado de lado {lado} es {lado**2}")
 else:
     print("No ha elegido un numero correcto")
+#--------------------------------------V1 trabajo GitHub---------------------------------------------    
+opc=0
+while(opc!=8):
+    print("Calculadora")
+    print("Introduzca uno de los numeros")
+    print("1.SUMA de numeros")
+    print("2.RESTA de numeros")
+    print("3.MULTIPLICACIÓN de numeros")
+    print("4.DIVISIÓN de numeros")
+    print("5.COCIENTE de la división")
+    print("6.RESTO de la división")
+    print("7.EXPONENCIACIÓN")
+    print("8.SALIR")
+    opc=int(input("Eliga un numero de los anteriores "))
+    while(opc<1 or opc>8):
+        print("Calculadora")
+        print("Introduzca uno de los numeros")
+        print("1.SUMA de numeros")
+        print("2.RESTA de numeros")
+        print("3.MULTIPLICACIÓN de numeros")
+        print("4.DIVISIÓN de numeros")
+        print("5.COCIENTE de la división")
+        print("6.RESTO de la división")
+        print("7.EXPONENCIACIÓN")
+        print("8.SALIR")
+        opc=int(input("Eliga un numero de los anteriores "))
+    if(opc==1):
+        numero1=int(input("Introduce el primer numero: "))
+        numero2=int(input("Introduce el segundo numero: "))
+        resultado1=numero1+numero2
+        print(f"\t La suma de estos dos numeros es: {resultado1}")
+    
+    elif(opc==2):
+        numero1=int(input("Introduce el primer numero: "))
+        numero2=int(input("Introduce el segundo numero: "))
+        resultado1=numero1-numero2
+        print(f"\t La resta de estos dos numeros es: {resultado1}")
+    
+    elif(opc==3):
+        numero1=int(input("Introduce el primer numero: "))
+        numero2=int(input("Introduce el segundo numero: "))
+        resultado1=numero1*numero2
+        print(f"\t La multiplicación de estos dos numeros es: {resultado1}")
+        
+    elif(opc==4):
+        numero1=int(input("Introduce el primer numero: "))
+        numero2=int(input("Introduce el segundo numero: "))
+        if(numero2==0):
+            print("El denominador no puede ser igual a 0")
+        resultado1=numero1/numero2
+        print(f"\t La división de estos dos numeros es: {resultado1}")
+        
+    elif(opc==5):
+        numero1=int(input("Introduce el primer numero: "))
+        numero2=int(input("Introduce el segundo numero: "))
+        resultado1=numero1//numero2
+        print(f"\t El cociente de estos dos numeros es: {resultado1}")
+    
+    elif(opc==6):
+        numero1=int(input("Introduce el primer numero: "))
+        numero2=int(input("Introduce el segundo numero: "))
+        resultado1=numero1%numero2
+        print(f"\t El resto de la división de estos dos numeros es: {resultado1}")
+    
+    elif(opc==7):
+        numero1=int(input("Introduce el primer numero: "))
+        numero2=int(input("Introduce el segundo numero: "))
+        resultado1=numero1**numero2
+        print(f"\t La división de estos dos numeros es: {resultado1}")
+    
+    elif(opc==8):
+        print("\t Has elegido salir de la calculadora")
+        
+    else:
+        print("ERROR")
     
 
     
