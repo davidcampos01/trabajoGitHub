@@ -27,7 +27,7 @@ Listarectángulo=[(3,2), (1, 5), (6, 7)]
 Listacírculo=[3, 6, 1, 9, 5]
 Listacuadrado=[4, 5, 7, 2, 8, 1, 6]
 
-print("1.Area de un triangulo")
+print("1.Area de un triangulo 12")
 print("2.Area de un rectangulo")
 print("3.Area de un circulo")
 print("4.Area de un cuadrado")
